@@ -20,12 +20,12 @@ add_action('init', function() {
         switch_theme('wpgpt-theme');
     }
     
-    // Step 2: Create main Texas hub page
-    $texas_page = get_page_by_path('texas-title-loans');
-    if (!$texas_page) {
-        $texas_id = wp_insert_post([
-            'post_title' => 'Texas Car Title Loans',
-            'post_name' => 'texas-title-loans',
+    // Step 2: Create main hub page
+    $main_page = get_page_by_path('car-title-loans');
+    if (!$main_page) {
+        $main_id = wp_insert_post([
+            'post_title' => 'Car Title Loans',
+            'post_name' => 'car-title-loans',
             'post_content' => '<!-- Content is handled by the page template -->',
             'post_status' => 'publish',
             'post_type' => 'page',
@@ -35,9 +35,9 @@ add_action('init', function() {
         ]);
         
         // Set as homepage
-        if ($texas_id) {
+        if ($main_id) {
             update_option('show_on_front', 'page');
-            update_option('page_on_front', $texas_id);
+            update_option('page_on_front', $main_id);
             update_option('page_for_posts', 0); // No blog page
         }
     }
@@ -60,9 +60,9 @@ add_action('init', function() {
     $cities_parent = get_page_by_path('cities');
     if (!$cities_parent) {
         $cities_parent_id = wp_insert_post([
-            'post_title' => 'Texas Cities We Serve',
+            'post_title' => 'Cities We Serve',
             'post_name' => 'cities',
-            'post_content' => '<h2>Title Loans in Major Texas Cities</h2><p>Select your city below to learn more about our title loan services in your area.</p>',
+            'post_content' => '<h2>Title Loans in Major Cities</h2><p>Select your city below to learn more about our title loan services in your area.</p>',
             'post_status' => 'publish',
             'post_type' => 'page'
         ]);

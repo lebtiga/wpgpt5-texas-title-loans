@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: City Hub Page
- * Description: Template for individual Texas city pages
+ * Description: Template for individual city pages
  */
 
 if (!defined('ABSPATH')) { exit; }
@@ -18,7 +18,7 @@ get_header();
     <div class="container">
         <div class="hero__inner">
             <div class="hero__content">
-                <h1 class="hero__title">Car Title Loans in <?php echo esc_html($city_data['name']); ?>, Texas</h1>
+                <h1 class="hero__title">Car Title Loans in <?php echo esc_html($city_data['name']); ?></h1>
                 <p class="hero__subtitle">Fast cash for <?php echo esc_html($city_data['nickname']); ?> residents. Same-day approval, keep your car, bad credit OK.</p>
                 <ul class="hero__bullets">
                     <li>Serving all <?php echo esc_html($city_data['name']); ?> neighborhoods</li>

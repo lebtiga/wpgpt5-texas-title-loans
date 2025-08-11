@@ -10,11 +10,11 @@ if ($existing) {
 
 // Create the Houston page with comprehensive content
 $houston_content = '
-<h1>Houston Title Loans - Fast Cash When You Need It Most</h1>
+<h1>Houston Car Title Loans - Fast Cash When You Need It Most</h1>
 
 <p>Welcome to Houston\'s premier title loan service, where Space City residents can get the financial help they need without the hassle of traditional lending. Whether you\'re facing an unexpected expense, medical emergency, or simply need cash to bridge a financial gap, our Houston title loan services provide fast, reliable solutions using your vehicle\'s equity.</p>
 
-<h2>Why Houston Residents Choose Our Title Loans</h2>
+<h2>Why Houston Residents Choose Our Car Title Loans</h2>
 
 <p>Houston is America\'s fourth-largest city, home to the world\'s largest medical center, NASA\'s Johnson Space Center, and a thriving energy sector. But even in this dynamic economy, financial challenges can arise. That\'s where we come in. Our title loan services are specifically designed for Houston\'s diverse communities, from the Heights to Sugar Land, from Katy to The Woodlands.</p>
 
@@ -34,7 +34,7 @@ $houston_content = '
 <li><strong>Keep Your Car:</strong> Drive away in your vehicle with the cash you need. Make payments according to your agreement while maintaining full use of your car.</li>
 </ol>
 
-<h2>Houston Title Loan Requirements</h2>
+<h2>Houston Car Title Loan Requirements</h2>
 
 <p>Getting a title loan in Houston is straightforward. Here\'s what you\'ll need:</p>
 
@@ -95,7 +95,7 @@ $houston_content = '
 <h3>Energy Sector Support</h3>
 <p>With oil and gas being major employers, industry downturns can affect thousands of Houston families. Our flexible repayment options are designed to accommodate the unique needs of energy sector workers.</p>
 
-<h2>Houston Title Loan Amounts and Rates</h2>
+<h2>Houston Car Title Loan Amounts and Rates</h2>
 
 <p>Loan amounts typically range from $1,000 to $50,000, depending on your vehicle\'s value. Houston\'s love for trucks and SUVs often translates to higher loan amounts compared to other cities. Our competitive rates are regulated by Texas state law, ensuring fair and transparent lending practices.</p>
 
@@ -111,7 +111,7 @@ $houston_content = '
 <li>Toyota Tacoma</li>
 </ul>
 
-<h2>Frequently Asked Questions About Houston Title Loans</h2>
+<h2>Frequently Asked Questions About Houston Car Title Loans</h2>
 
 <h3>Can I get a title loan if I\'m still making payments on my vehicle?</h3>
 <p>In some cases, yes. If you have sufficient equity in your vehicle, we may be able to help even if you haven\'t completely paid off your auto loan.</p>
@@ -128,7 +128,7 @@ $houston_content = '
 <h3>What areas of Houston do you serve?</h3>
 <p>We serve all of Harris County and surrounding areas, including Fort Bend, Montgomery, Brazoria, and Galveston counties.</p>
 
-<h2>Apply for Your Houston Title Loan Today</h2>
+<h2>Apply for Your Houston Car Title Loan Today</h2>
 
 <p>Don\'t let financial stress overwhelm you. Houston\'s trusted title loan provider is here to help with fast, friendly service and competitive rates. Whether you\'re in River Oaks or Fifth Ward, Bellaire or Pasadena, we\'re ready to serve you.</p>
 
@@ -141,14 +141,14 @@ $houston_content = '
 
 // Create the page
 $page_id = wp_insert_post([
-    'post_title'    => 'Houston Title Loans - Complete Guide',
+    'post_title'    => 'Houston Car Title Loans - Complete Guide',
     'post_name'     => 'houston-title-loans-sample',
     'post_content'  => $houston_content,
     'post_status'   => 'publish',
     'post_type'     => 'page',
     'post_author'   => 1,
     'meta_input'    => [
-        '_yoast_wpseo_title' => 'Houston Title Loans | Same Day Cash | Keep Your Car',
+        '_yoast_wpseo_title' => 'Houston Car Title Loans | Same Day Cash | Keep Your Car',
         '_yoast_wpseo_metadesc' => 'Get approved for Houston title loans in 30 minutes. Same-day funding, keep driving your car, no credit check required. Serving all Greater Houston areas.',
         '_wp_page_template' => 'page-templates/page-elementor.php'
     ]

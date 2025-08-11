@@ -10,7 +10,7 @@ if ($page) {
 
 // Create new page
 $page_id = wp_insert_post([
-    'post_title'    => 'Houston Title Loans - Professional Layout',
+    'post_title'    => 'Houston Car Title Loans - Professional Layout',
     'post_name'     => 'houston-title-loans-elementor',
     'post_content'  => '', // Elementor will handle content
     'post_status'   => 'publish',
@@ -60,7 +60,7 @@ $elementor_data = [
                         'elType' => 'widget',
                         'widgetType' => 'heading',
                         'settings' => [
-                            'title' => 'Houston Title Loans - Fast Cash When You Need It Most',
+                            'title' => 'Houston Car Title Loans - Fast Cash When You Need It Most',
                             'align' => 'center',
                             'title_color' => '#ffffff',
                             'typography_typography' => 'custom',
@@ -201,7 +201,7 @@ $elementor_data = [
                         'elType' => 'widget',
                         'widgetType' => 'heading',
                         'settings' => [
-                            'title' => 'Why Houston Residents Choose Our Title Loans',
+                            'title' => 'Why Houston Residents Choose Our Car Title Loans',
                             'header_size' => 'h2',
                             'title_color' => '#0d4c85'
                         ]
@@ -252,7 +252,7 @@ $elementor_data = [
                         'elType' => 'widget',
                         'widgetType' => 'heading',
                         'settings' => [
-                            'title' => 'Benefits of Our Houston Title Loans',
+                            'title' => 'Benefits of Our Houston Car Title Loans',
                             'header_size' => 'h2',
                             'align' => 'center',
                             'title_color' => '#0d4c85'
@@ -369,17 +369,17 @@ update_post_meta($page_id, '_elementor_data', wp_json_encode($elementor_data));
 
 // Also update with better standard content for non-Elementor view
 $standard_content = '
-<h1>Houston Title Loans - Fast Cash When You Need It Most</h1>
+<h1>Houston Car Title Loans - Fast Cash When You Need It Most</h1>
 
 <p><strong>Get approved in 30 minutes • Same-day funding • Keep driving your car</strong></p>
 
-<h2>Why Houston Residents Choose Our Title Loans</h2>
+<h2>Why Houston Residents Choose Our Car Title Loans</h2>
 
 <p>Houston is America\'s fourth-largest city, home to the world\'s largest medical center, NASA\'s Johnson Space Center, and a thriving energy sector. But even in this dynamic economy, financial challenges can arise.</p>
 
 <p>Our title loan services are specifically designed for Houston\'s diverse communities, from the Heights to Sugar Land, from Katy to The Woodlands. We understand the unique financial needs of Space City residents.</p>
 
-<h2>Benefits of Our Houston Title Loans</h2>
+<h2>Benefits of Our Houston Car Title Loans</h2>
 
 <h3>Same-Day Approval & Funding</h3>
 <p>In a city that never slows down, neither should your access to emergency funds. Our streamlined approval process means Houston residents can often receive their cash the same day they apply.</p>

@@ -1,18 +1,18 @@
-# Texas Title Loans - SEO Topical Map Cluster Project
+# Car Title Loans - SEO Topical Map Cluster Project
 
 ## Executive Summary
 
 ### Project Overview
-Building a comprehensive WordPress-based SEO website for a Texas title loan company using a topical map cluster hub-and-spoke model. The project targets 10 major Texas cities with 5 core services, creating approximately 50 highly optimized pages.
+Building a comprehensive WordPress-based SEO website for a car title loan company using a topical map cluster hub-and-spoke model. The project targets 10 major cities with 5 core services, creating approximately 50 highly optimized pages.
 
 ### Business Objectives
-- Dominate local search results for title loan services across Texas
+- Dominate local search results for title loan services
 - Build topical authority through comprehensive content clustering
 - Generate qualified leads through organic search traffic
 - Establish trust and credibility in the financial services sector
 
 ### Target Audience
-- Texas residents facing financial emergencies
+- Residents facing financial emergencies
 - Vehicle owners needing quick cash access
 - People with poor or no credit history
 - Specific demographics per city (oil workers, tech employees, military, etc.)
@@ -36,7 +36,7 @@ Building a comprehensive WordPress-based SEO website for a Texas title loan comp
 ### Content Hierarchy
 
 #### Level 1: Main Hub (Home Page)
-- Texas Title Loans main landing page
+- Car Title Loans main landing page
 - Links to all city hubs and service hubs
 
 #### Level 2: City Hubs (10 Pages)
