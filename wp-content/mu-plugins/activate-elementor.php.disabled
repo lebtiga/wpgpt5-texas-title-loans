@@ -1,0 +1,53 @@
+<?php
+/**
+ * Auto-activate and configure Elementor
+ */
+
+// Activate Elementor if not already active
+add_action('init', function() {
+    if (!is_plugin_active('elementor/elementor.php')) {
+        activate_plugin('elementor/elementor.php');
+    }
+    
+    // Configure Elementor for performance (run once)
+    if (!get_option('wpgpt_elementor_configured')) {
+        // Elementor performance settings
+        update_option('elementor_disable_color_schemes', 'yes');
+        update_option('elementor_disable_typography_schemes', 'yes');
+        update_option('elementor_experiment-container', 'active'); // Use flexbox containers
+        update_option('elementor_experiment-e_optimized_assets_loading', 'active'); // Improved asset loading
+        update_option('elementor_experiment-e_optimized_css_loading', 'active'); // Optimized CSS
+        update_option('elementor_google_font', ''); // Disable Google fonts
+        update_option('elementor_font_display', 'swap'); // Font display swap
+        
+        // Disable unnecessary features
+        update_option('elementor_enable_inspector', ''); // Disable inspector
+        update_option('elementor_editor_break_lines', '1'); // Clean code output
+        
+        // Set default content width
+        update_option('elementor_container_width', '1140');
+        update_option('elementor_space_between_widgets', '20');
+        
+        // Mark as configured
+        update_option('wpgpt_elementor_configured', true);
+    }
+});
+
+// Helper function to check if plugin is active
+if (!function_exists('is_plugin_active')) {
+    function is_plugin_active($plugin) {
+        return in_array($plugin, (array) get_option('active_plugins', array()));
+    }
+}
+
+// Helper function to activate plugin
+if (!function_exists('activate_plugin')) {
+    function activate_plugin($plugin) {
+        $current = get_option('active_plugins');
+        if (!in_array($plugin, $current)) {
+            $current[] = $plugin;
+            sort($current);
+            update_option('active_plugins', $current);
+        }
+    }
+}

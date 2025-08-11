@@ -1,0 +1,183 @@
+<?php
+/**
+ * Auto-setup Texas title loan pages
+ * This runs automatically when WordPress loads
+ */
+
+add_action('init', function() {
+    // Only run once - check if already set up
+    if (get_option('wpgpt_pages_created_v3')) {
+        return;
+    }
+    
+    // Don't run during AJAX calls
+    if (wp_doing_ajax()) {
+        return;
+    }
+    
+    // Step 1: Activate the wpgpt-theme
+    if (wp_get_theme()->get_stylesheet() !== 'wpgpt-theme') {
+        switch_theme('wpgpt-theme');
+    }
+    
+    // Step 2: Create main Texas hub page
+    $texas_page = get_page_by_path('texas-title-loans');
+    if (!$texas_page) {
+        $texas_id = wp_insert_post([
+            'post_title' => 'Texas Car Title Loans',
+            'post_name' => 'texas-title-loans',
+            'post_content' => '<!-- Content is handled by the page template -->',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'meta_input' => [
+                '_wp_page_template' => 'page-templates/page-texas-hub.php'
+            ]
+        ]);
+        
+        // Set as homepage
+        if ($texas_id) {
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $texas_id);
+            update_option('page_for_posts', 0); // No blog page
+        }
+    }
+    
+    // Step 3: Create city pages
+    $cities = [
+        'houston' => 'Houston',
+        'san-antonio' => 'San Antonio',
+        'dallas' => 'Dallas',
+        'austin' => 'Austin',
+        'fort-worth' => 'Fort Worth',
+        'el-paso' => 'El Paso',
+        'arlington' => 'Arlington',
+        'plano' => 'Plano',
+        'corpus-christi' => 'Corpus Christi',
+        'lubbock' => 'Lubbock'
+    ];
+    
+    // Create cities parent page first
+    $cities_parent = get_page_by_path('cities');
+    if (!$cities_parent) {
+        $cities_parent_id = wp_insert_post([
+            'post_title' => 'Texas Cities We Serve',
+            'post_name' => 'cities',
+            'post_content' => '<h2>Title Loans in Major Texas Cities</h2><p>Select your city below to learn more about our title loan services in your area.</p>',
+            'post_status' => 'publish',
+            'post_type' => 'page'
+        ]);
+    } else {
+        $cities_parent_id = $cities_parent->ID;
+    }
+    
+    // Create individual city pages
+    foreach ($cities as $slug => $name) {
+        $city_page = get_page_by_path('cities/' . $slug);
+        if (!$city_page && $cities_parent_id) {
+            wp_insert_post([
+                'post_title' => $name . ' Car Title Loans',
+                'post_name' => $slug,
+                'post_content' => '<!-- City content handled by template -->',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_parent' => $cities_parent_id,
+                'meta_input' => [
+                    '_wp_page_template' => 'page-templates/page-city-hub.php'
+                ]
+            ]);
+        }
+    }
+    
+    // Step 4: Create service pages
+    $services = [
+        'car-title-loans' => 'Car Title Loans',
+        'online-title-loans' => 'Online Title Loans',
+        'no-credit-check-title-loans' => 'No Credit Check Title Loans',
+        'emergency-title-loans' => 'Emergency Title Loans',
+        'vehicle-title-loans' => 'Vehicle Title Loans'
+    ];
+    
+    // Create services parent page
+    $services_parent = get_page_by_path('services');
+    if (!$services_parent) {
+        $services_parent_id = wp_insert_post([
+            'post_title' => 'Our Title Loan Services',
+            'post_name' => 'services',
+            'post_content' => '<h2>Title Loan Services in Texas</h2><p>We offer a variety of title loan services to meet your needs.</p>',
+            'post_status' => 'publish',
+            'post_type' => 'page'
+        ]);
+    } else {
+        $services_parent_id = $services_parent->ID;
+    }
+    
+    // Create individual service pages
+    foreach ($services as $slug => $name) {
+        $service_page = get_page_by_path('services/' . $slug);
+        if (!$service_page && $services_parent_id) {
+            wp_insert_post([
+                'post_title' => $name . ' in Texas',
+                'post_name' => $slug,
+                'post_content' => '<p>' . $name . ' available throughout Texas with fast approval and competitive rates.</p>',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_parent' => $services_parent_id
+            ]);
+        }
+    }
+    
+    // Step 5: Create city-service combination pages (optional - sample)
+    // Creating just a few examples to avoid too many pages initially
+    if ($cities_parent_id) {
+        // Houston + Car Title Loans
+        $houston_page = get_page_by_path('cities/houston');
+        if ($houston_page) {
+            $combo_page = get_page_by_path('cities/houston/car-title-loans');
+            if (!$combo_page) {
+                wp_insert_post([
+                    'post_title' => 'Car Title Loans in Houston, TX',
+                    'post_name' => 'car-title-loans',
+                    'post_content' => '<!-- Combo page content -->',
+                    'post_status' => 'publish',
+                    'post_type' => 'page',
+                    'post_parent' => $houston_page->ID
+                ]);
+            }
+        }
+    }
+    
+    // Step 6: Update permalinks
+    flush_rewrite_rules();
+    
+    // Mark setup as complete
+    update_option('wpgpt_pages_created_v3', true);
+    
+    // Optional: Set permalink structure to post name for better SEO
+    update_option('permalink_structure', '/%postname%/');
+    flush_rewrite_rules();
+});
+
+// Add admin notice when setup is complete
+add_action('admin_notices', function() {
+    if (get_option('wpgpt_pages_created_v3') && !get_option('wpgpt_setup_notice_dismissed')) {
+        ?>
+        <div class="notice notice-success is-dismissible">
+            <p><strong>Texas Title Loan Pages Setup Complete!</strong></p>
+            <p>Your WordPress site has been configured with:</p>
+            <ul style="list-style: disc; margin-left: 20px;">
+                <li>Main Texas hub page (set as homepage)</li>
+                <li>10 city pages with SEO templates</li>
+                <li>5 service type pages</li>
+                <li>wpgpt-theme activated</li>
+            </ul>
+            <p><a href="<?php echo home_url(); ?>" class="button button-primary" target="_blank">View Your Site</a></p>
+        </div>
+        <?php
+    }
+});
+
+// Allow dismissing the notice
+add_action('wp_ajax_dismiss_wpgpt_notice', function() {
+    update_option('wpgpt_setup_notice_dismissed', true);
+    wp_die();
+});
