@@ -109,8 +109,29 @@ img, video { max-width: 100%; height: auto; }
 .cta-band__title { margin: 0 0 4px; }
 .cta-band__actions { display: flex; gap: 10px; }
 
+/* Services Section */
+.services { padding: 56px 0; background: var(--surface); }
+.services .section__subtitle { color: var(--muted); font-size: 18px; margin-bottom: 24px; text-align: center; }
+.services .card__link { color: var(--brand-blue-1); text-decoration: none; font-weight: 600; }
+.services .card__link:hover { text-decoration: underline; }
+.services .card__title a { color: var(--text); text-decoration: none; }
+.services .card__title a:hover { color: var(--brand-blue-1); }
+
+/* Locations Section Updates */
+.locations__grid a { color: var(--text); text-decoration: none; }
+.locations__grid a:hover { color: var(--brand-blue-1); text-decoration: underline; }
+
 /* Footer */
-.site-footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); background: var(--surface); }
+.site-footer { background: #1a1a1a; color: #b0b0b0; padding: 48px 0 24px; margin-top: 0; }
+.footer-content { color: #b0b0b0; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 32px; }
+.footer-column h3, .footer-title { color: #ffffff; font-size: 16px; margin: 0 0 12px; font-weight: 600; }
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { color: #b0b0b0; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: #ffffff; }
+.footer-bottom { border-top: 1px solid #333; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { margin: 0; color: #808080; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 
 /* Sticky CTA for mobile */
@@ -123,11 +144,14 @@ img, video { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 720px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .site-header .container { flex-wrap: wrap; height: auto; row-gap: 10px; padding-top: 8px; padding-bottom: 8px; }
   .site-nav { order: 3; width: 100%; margin: 4px 0 0; }
   .menu { flex-wrap: wrap; gap: 12px; }
   .locations__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .services .cardgrid--3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
 @media (max-width: 640px) {
@@ -135,4 +159,5 @@ img, video { max-width: 100%; height: auto; }
   .cta-band__inner { flex-direction: column; align-items: flex-start; }
   .sticky-cta { display: flex; }
   .locations__grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
 }

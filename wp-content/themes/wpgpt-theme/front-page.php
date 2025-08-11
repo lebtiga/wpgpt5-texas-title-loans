@@ -123,21 +123,63 @@
     </div>
 </section>
 
+<section class="services">
+    <div class="container">
+        <h2 class="section__title">Our Title Loan Services</h2>
+        <p class="section__subtitle">Choose the service that best fits your needs - available in all major Texas cities</p>
+        <div class="cardgrid cardgrid--3">
+            <article class="card">
+                <h3 class="card__title"><a href="/online-title-loans/">Online Title Loans</a></h3>
+                <p class="card__text">Apply from home 24/7. Get approved in minutes with our fully digital process.</p>
+                <a href="/online-title-loans/" class="card__link">Learn More →</a>
+            </article>
+            <article class="card">
+                <h3 class="card__title"><a href="/no-credit-check-title-loans/">No Credit Check Title Loans</a></h3>
+                <p class="card__text">Bad credit or no credit? No problem. Your vehicle's value is what matters.</p>
+                <a href="/no-credit-check-title-loans/" class="card__link">Learn More →</a>
+            </article>
+            <article class="card">
+                <h3 class="card__title"><a href="/emergency-title-loans/">Emergency Title Loans</a></h3>
+                <p class="card__text">Urgent financial crisis? Get same-day cash with priority processing.</p>
+                <a href="/emergency-title-loans/" class="card__link">Learn More →</a>
+            </article>
+            <article class="card">
+                <h3 class="card__title"><a href="/vehicle-title-loans/">Vehicle Title Loans</a></h3>
+                <p class="card__text">Cars, trucks, motorcycles, RVs - we accept all vehicle types.</p>
+                <a href="/vehicle-title-loans/" class="card__link">Learn More →</a>
+            </article>
+            <article class="card">
+                <h3 class="card__title"><a href="/title-loans/">Traditional Title Loans</a></h3>
+                <p class="card__text">Our standard title loan service with competitive rates and flexible terms.</p>
+                <a href="/title-loans/" class="card__link">Learn More →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
 <section class="locations">
     <div class="container">
         <div class="locations__header">
-            <h2 class="section__title">Areas We Serve</h2>
+            <h2 class="section__title">Texas Cities We Serve</h2>
             <a class="button" href="#apply">Apply Now</a>
         </div>
         <div class="locations__grid">
             <ul>
-                <li>Houston</li><li>San Antonio</li><li>Dallas</li><li>Austin</li><li>Fort Worth</li><li>El Paso</li>
+                <li><a href="/houston-title-loans/">Houston Title Loans</a></li>
+                <li><a href="/san-antonio-title-loans/">San Antonio Title Loans</a></li>
+                <li><a href="/dallas-title-loans/">Dallas Title Loans</a></li>
+                <li><a href="/austin-title-loans/">Austin Title Loans</a></li>
             </ul>
             <ul>
-                <li>Arlington</li><li>Corpus Christi</li><li>Plano</li><li>Laredo</li><li>Lubbock</li><li>Garland</li>
+                <li><a href="/fort-worth-title-loans/">Fort Worth Title Loans</a></li>
+                <li><a href="/el-paso-title-loans/">El Paso Title Loans</a></li>
+                <li><a href="/arlington-title-loans/">Arlington Title Loans</a></li>
+                <li><a href="/plano-title-loans/">Plano Title Loans</a></li>
             </ul>
             <ul>
-                <li>Irving</li><li>Frisco</li><li>McKinney</li><li>Amarillo</li><li>Grand Prairie</li><li>Brownsville</li>
+                <li><a href="/corpus-christi-title-loans/">Corpus Christi Title Loans</a></li>
+                <li><a href="/lubbock-title-loans/">Lubbock Title Loans</a></li>
+                <li class="muted">More cities coming soon</li>
             </ul>
         </div>
     </div>
