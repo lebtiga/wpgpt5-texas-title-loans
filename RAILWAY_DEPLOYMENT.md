@@ -10,10 +10,14 @@
 
 1. **Login to Railway**: https://railway.app
 2. **New Project**: Click "New Project"
-3. **Deploy from GitHub**: Select your repository `wpgpt5-texas-title-loans`
-4. **Add MySQL Database**:
-   - Click "New" → "Database" → "MySQL"
-   - Railway will automatically set environment variables
+3. **IMPORTANT - Add MySQL Database FIRST**:
+   - Click "New" → "Database" → "Add MySQL"
+   - Wait for MySQL to deploy (green status)
+   - Note the environment variables created
+4. **Then Deploy from GitHub**:
+   - Click "New" → "GitHub Repo"
+   - Select your repository `wpgpt5-texas-title-loans`
+   - Railway will automatically detect the Dockerfile
 
 ### Step 2: Configure Environment Variables
 

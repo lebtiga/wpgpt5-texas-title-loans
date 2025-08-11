@@ -1,14 +1,15 @@
 FROM wordpress:6-php8.2-apache
 
-# Install additional PHP extensions
+# Install additional PHP extensions and MySQL client
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
     libwebp-dev \
+    default-mysql-client \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install mysqli \
+    && docker-php-ext-install mysqli pdo pdo_mysql \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -37,10 +38,17 @@ RUN echo "upload_max_filesize = 64M" > /usr/local/etc/php/conf.d/uploads.ini \
     && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini \
     && echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini
 
-# Add health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost/ || exit 1
+# Copy custom entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint-custom.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint-custom.sh
+
+# Copy wp-config template for Railway
+COPY wp-config-railway.php /var/www/html/wp-config-railway.php
+
+# Health check removed - WordPress needs database setup first
+# Railway will monitor the container status instead
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+# Use custom entrypoint that waits for database
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint-custom.sh"]
