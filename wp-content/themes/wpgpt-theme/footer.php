@@ -45,7 +45,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?> - Texas Title Loans</p>
+                <div class="footer-logo">
+                    <img src="https://www.ezcartitleloans.com/images/image/eztitleloans-logoAT2x.webp" 
+                         alt="EZ Car Title Loans" 
+                         style="height: 30px; width: auto; opacity: 0.8; margin-bottom: 10px;" />
+                </div>
+                <p>&copy; <?php echo esc_html(date('Y')); ?> EZ Car Title Loans - Texas Title Loans</p>
                 <nav class="footer-nav" aria-label="Footer">
                     <?php
                     wp_nav_menu([

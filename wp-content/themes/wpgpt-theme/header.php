@@ -18,16 +18,9 @@
 <header class="site-header">
     <div class="container">
         <a class="site-brand" href="<?php echo esc_url(home_url('/')); ?>">
-            <?php
-            $logo_url = get_theme_mod('wpgpt_logo_url');
-            if ($logo_url) {
-                echo '<img src="' . esc_url($logo_url) . '" alt="' . esc_attr(get_bloginfo('name')) . '" style="height:36px; width:auto;" />';
-            } else if (function_exists('the_custom_logo') && has_custom_logo()) {
-                the_custom_logo();
-            } else {
-                bloginfo('name');
-            }
-            ?>
+            <img src="https://www.ezcartitleloans.com/images/image/eztitleloans-logoAT2x.webp" 
+                 alt="EZ Car Title Loans - Texas Title Loans" 
+                 style="height: 40px; width: auto; max-width: 180px;" />
         </a>
         <nav class="site-nav" aria-label="Primary">
             <?php
