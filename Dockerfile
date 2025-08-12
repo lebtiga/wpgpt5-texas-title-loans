@@ -13,14 +13,14 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy custom theme
+# Copy custom theme (includes all assets)
 COPY wp-content/themes/wpgpt-theme /usr/src/wordpress/wp-content/themes/wpgpt-theme
 
 # Copy mu-plugins
 COPY wp-content/mu-plugins /usr/src/wordpress/wp-content/mu-plugins
 
-# Copy custom CSS and assets
-COPY assets /usr/src/wordpress/wp-content/themes/wpgpt-theme/assets
+# Note: Theme assets are already included in the theme folder above
+# Removed the line that was overwriting theme assets
 
 # Create uploads directory
 RUN mkdir -p /usr/src/wordpress/wp-content/uploads

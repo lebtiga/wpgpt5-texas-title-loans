@@ -14,9 +14,9 @@ body {
     color: #2c3e50;
 }
 
-/* Urgency Banner */
+/* Urgency Banner - Texas Theme */
 .urgency-banner {
-    background: linear-gradient(90deg, #ff6b6b, #ff5252);
+    background: linear-gradient(90deg, #bf0a30, #002868);
     color: white;
     padding: 8px 10px;
     text-align: center;
@@ -44,9 +44,10 @@ body {
     50% { opacity: 1; }
 }
 
-/* Hero Sales Section - Mobile First */
+/* Hero Sales Section - Texas Theme */
 .hero-sales {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(rgba(13, 76, 133, 0.88), rgba(11, 47, 83, 0.92)),
+                url('https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1920&auto=format&fit=crop') center/cover;
     color: white;
     padding: 30px 15px;
     text-align: center;
