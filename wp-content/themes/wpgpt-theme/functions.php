@@ -15,13 +15,13 @@ function wpgpt_enqueue_assets(): void {
         $theme_version
     );
     
-    // Sales page CSS for homepage - fixed version
+    // Sales page CSS for homepage - fixed version with cache busting
     if (is_front_page()) {
         wp_enqueue_style(
             'sales-page',
             get_template_directory_uri() . '/assets/css/sales-page-fixed.css',
             ['wpgpt-main'],
-            '1.0.3'
+            '1.0.4'
         );
     }
 
