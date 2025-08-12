@@ -46,13 +46,14 @@
                         <!-- Step 1: Basic Info -->
                         <div class="form-step active" data-step="1">
                             <div class="form-group">
-                                <input type="text" class="form-input" id="zip" placeholder="ZIP Code" required pattern="[0-9]{5}">
-                                <label class="form-label">Texas ZIP Code</label>
+                                <label class="form-label" for="zip">Texas ZIP Code</label>
+                                <input type="text" class="form-input" id="zip" placeholder="ZIP Code" required pattern="[0-9]{5}" aria-label="Enter your Texas ZIP code" aria-required="true">
                             </div>
                             
                             <div class="form-group">
-                                <select class="form-input" id="vehicle-year" required>
-                                    <option value="">Vehicle Year</option>
+                                <label class="form-label" for="vehicle-year">Vehicle Year</label>
+                                <select class="form-input" id="vehicle-year" required aria-label="Select your vehicle year" aria-required="true">
+                                    <option value="">Select Year</option>
                                     <?php for($year = date('Y'); $year >= 1995; $year--): ?>
                                         <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
                                     <?php endfor; ?>
@@ -72,11 +73,13 @@
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" class="form-input" id="vehicle-make" placeholder="Vehicle Make (e.g., Ford)">
+                                <label class="form-label" for="vehicle-make">Vehicle Make</label>
+                                <input type="text" class="form-input" id="vehicle-make" placeholder="Vehicle Make (e.g., Ford)" aria-label="Enter your vehicle make">
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" class="form-input" id="vehicle-model" placeholder="Vehicle Model (e.g., F-150)">
+                                <label class="form-label" for="vehicle-model">Vehicle Model</label>
+                                <input type="text" class="form-input" id="vehicle-model" placeholder="Vehicle Model (e.g., F-150)" aria-label="Enter your vehicle model">
                             </div>
                             
                             <button type="button" class="btn-primary btn-block next-step">
@@ -91,15 +94,18 @@
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" class="form-input" id="full-name" placeholder="Full Name" required>
+                                <label class="form-label" for="full-name">Full Name</label>
+                                <input type="text" class="form-input" id="full-name" placeholder="Full Name" required aria-label="Enter your full name" aria-required="true">
                             </div>
                             
                             <div class="form-group">
-                                <input type="tel" class="form-input" id="phone" placeholder="Phone Number" required>
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" class="form-input" id="phone" placeholder="Phone Number" required aria-label="Enter your phone number" aria-required="true">
                             </div>
                             
                             <div class="form-group">
-                                <input type="email" class="form-input" id="email" placeholder="Email (optional)">
+                                <label class="form-label" for="email">Email (optional)</label>
+                                <input type="email" class="form-input" id="email" placeholder="Email (optional)" aria-label="Enter your email address (optional)">
                             </div>
                             
                             <button type="submit" class="btn-primary btn-block btn-submit">
@@ -199,8 +205,8 @@
         
         <div class="calculator-card">
             <div class="calculator-slider">
-                <label>Vehicle Value: <span id="vehicle-value">$10,000</span></label>
-                <input type="range" id="value-slider" min="3000" max="50000" value="10000" step="500">
+                <label for="value-slider">Vehicle Value: <span id="vehicle-value" aria-live="polite">$10,000</span></label>
+                <input type="range" id="value-slider" min="3000" max="50000" value="10000" step="500" aria-label="Select your vehicle value between $3,000 and $50,000" aria-valuemin="3000" aria-valuemax="50000" aria-valuenow="10000">
             </div>
             
             <div class="calculator-results">
