@@ -100,7 +100,78 @@
     font-size: 14px;
 }
 
-/* Form Card */
+/* iPhone Form Container */
+.mobile-center-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.iphone-container-responsive {
+    position: relative !important;
+    width: 340px !important;
+    height: 636px !important;
+    transition: all 0.3s ease !important;
+    max-width: 100%;
+}
+
+.iframe-container-responsive {
+    position: absolute !important;
+    top: 56px !important;
+    left: 19px !important;
+    width: 309px !important;
+    height: 524px !important;
+    overflow: hidden !important;
+    border-radius: 22px !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-iframe-responsive {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 375px) {
+    .iphone-container-responsive {
+        transform: scale(0.85);
+        margin: -50px 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .iphone-container-responsive {
+        transform: scale(0.75);
+        margin: -80px 0;
+    }
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+    .mobile-center-wrapper {
+        min-height: auto !important;
+        padding: 40px 20px !important;
+    }
+    
+    .iphone-container-responsive {
+        width: 380px !important;
+        height: 710px !important;
+    }
+    
+    .iframe-container-responsive {
+        top: 62px !important;
+        left: 21px !important;
+        width: 345px !important;
+        height: 585px !important;
+        border-radius: 25px !important;
+    }
+}
+
+/* Old form styles - kept for fallback */
 .hero-form {
     max-width: 450px;
     margin: 30px auto;

@@ -31,97 +31,28 @@
                 <span>✓ No Credit Check</span>
             </div>
             
-            <!-- Main Form - Simplified -->
-            <div class="hero-form" id="instant-quote">
-                <div class="form-card">
-                    <h2 class="form-card__title">Get Your Cash Now - 60 Second Form</h2>
-                    
-                    <!-- Progress indicator -->
-                    <div class="form-progress">
-                        <div class="form-progress__bar" style="width: 33%"></div>
-                        <span class="form-progress__text">Step 1 of 3</span>
-                    </div>
-                    
-                    <form class="quote-form" id="title-loan-form" action="#" method="post">
-                        <!-- Step 1: Basic Info -->
-                        <div class="form-step active" data-step="1">
-                            <div class="form-group">
-                                <label class="form-label" for="zip">Texas ZIP Code</label>
-                                <input type="text" class="form-input" id="zip" placeholder="ZIP Code" required pattern="[0-9]{5}" aria-label="Enter your Texas ZIP code" aria-required="true">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="vehicle-year">Vehicle Year</label>
-                                <select class="form-input" id="vehicle-year" required aria-label="Select your vehicle year" aria-required="true">
-                                    <option value="">Select Year</option>
-                                    <?php for($year = date('Y'); $year >= 1995; $year--): ?>
-                                        <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
-                                    <?php endfor; ?>
-                                </select>
-                            </div>
-                            
-                            <button type="button" class="btn-primary btn-block next-step">
-                                Continue → See Your Amount
-                            </button>
-                        </div>
-                        
-                        <!-- Step 2: Vehicle Details -->
-                        <div class="form-step" data-step="2">
-                            <div class="loan-estimate">
-                                <span class="loan-estimate__label">Estimated Loan Amount:</span>
-                                <span class="loan-estimate__amount">$3,500 - $12,000</span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="vehicle-make">Vehicle Make</label>
-                                <input type="text" class="form-input" id="vehicle-make" placeholder="Vehicle Make (e.g., Ford)" aria-label="Enter your vehicle make">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="vehicle-model">Vehicle Model</label>
-                                <input type="text" class="form-input" id="vehicle-model" placeholder="Vehicle Model (e.g., F-150)" aria-label="Enter your vehicle model">
-                            </div>
-                            
-                            <button type="button" class="btn-primary btn-block next-step">
-                                Final Step → Get Approved
-                            </button>
-                        </div>
-                        
-                        <!-- Step 3: Contact Info -->
-                        <div class="form-step" data-step="3">
-                            <div class="approval-ready">
-                                <span>🎉 Pre-Approved! Complete to get your cash:</span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="full-name">Full Name</label>
-                                <input type="text" class="form-input" id="full-name" placeholder="Full Name" required aria-label="Enter your full name" aria-required="true">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="phone">Phone Number</label>
-                                <input type="tel" class="form-input" id="phone" placeholder="Phone Number" required aria-label="Enter your phone number" aria-required="true">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label" for="email">Email (optional)</label>
-                                <input type="email" class="form-input" id="email" placeholder="Email (optional)" aria-label="Enter your email address (optional)">
-                            </div>
-                            
-                            <button type="submit" class="btn-primary btn-block btn-submit">
-                                <span class="btn-text">Get My Cash Now</span>
-                                <span class="btn-secure">🔒 Secure & Encrypted</span>
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <!-- Trust elements -->
-                    <div class="form-trust">
-                        <img src="https://img.shields.io/badge/BBB-A%2B%20Rated-green" alt="BBB A+ Rated">
-                        <img src="https://img.shields.io/badge/SSL-Secured-blue" alt="SSL Secured">
-                        <span>No Impact to Credit Score</span>
-                    </div>
+            <!-- iPhone Form Container -->
+            <div class="mobile-center-wrapper" style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              padding: 20px;
+              box-sizing: border-box;
+            ">
+              <div class="iphone-container-responsive" style="position: relative; width: 340px; height: 636px; transition: all 0.3s ease;">
+                <img src="https://www.ezcartitleloans.com/images/image/iphone-mo.webp" alt="iPhone" style="width: 100%; height: 100%;">
+                <div class="iframe-container-responsive" style="position: absolute; top: 56px; left: 19px; width: 309px; height: 524px; overflow: hidden; border-radius: 22px; transition: all 0.3s ease;">
+                  <iframe 
+                    class="form-iframe-responsive" 
+                    src="https://ezcar.blckpanda.com/appl/app_form.php" 
+                    style="width: 100%; height: 100%; border: none;" 
+                    sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-modals allow-top-navigation-by-user-activation"
+                    title="Texas Title Loan Application Form"
+                    loading="eager">
+                  </iframe>
                 </div>
+              </div>
             </div>
             
             <!-- Mobile CTA for scroll -->

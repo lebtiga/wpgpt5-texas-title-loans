@@ -27,7 +27,7 @@ function wpgpt_enqueue_assets(): void {
             'sales-page',
             get_template_directory_uri() . '/assets/css/sales-page-fixed.css',
             ['wpgpt-main'],
-            '1.0.4'
+            '1.1.0'
         );
     }
 
@@ -46,7 +46,7 @@ function wpgpt_enqueue_assets(): void {
             'sales-page',
             get_template_directory_uri() . '/assets/js/sales-page.js',
             [],
-            '1.0.1',
+            '1.1.0',
             true
         );
     }
