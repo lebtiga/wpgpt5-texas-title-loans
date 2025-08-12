@@ -38,14 +38,16 @@
     50% { opacity: 0.8; }
 }
 
-/* Hero Sales Section - Texas Theme */
+/* Hero Sales Section - Texas Theme - Optimized */
 .hero-sales {
     background: linear-gradient(rgba(13, 76, 133, 0.88), rgba(11, 47, 83, 0.92)),
-                url('https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1920&auto=format&fit=crop') center/cover;
+                linear-gradient(135deg, #0d4c85 0%, #0b2f53 100%);
     color: white;
     padding: 40px 20px;
     text-align: center;
     position: relative;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-sales__content {
@@ -465,11 +467,11 @@
     font-weight: 600;
 }
 
-/* Benefits Section - Texas Theme */
+/* Benefits Section - Texas Theme - Optimized */
 .benefits-emotional {
     padding: 50px 20px;
-    background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)),
-                url('https://images.unsplash.com/photo-1502003148287-a82ef80a6abc?w=1920&auto=format&fit=crop') center/cover;
+    background: linear-gradient(rgba(248, 249, 250, 0.98), rgba(248, 249, 250, 0.98)),
+                linear-gradient(to bottom, #f8f9fa, #e9ecef);
 }
 
 .section-title-sales {
@@ -626,11 +628,11 @@
     color: #bf0a30;
 }
 
-/* Testimonials - Texas Theme */
+/* Testimonials - Texas Theme - Optimized */
 .testimonials-section {
     padding: 50px 20px;
-    background: linear-gradient(rgba(248, 249, 250, 0.97), rgba(248, 249, 250, 0.97)),
-                url('https://images.unsplash.com/photo-1568736604043-74e93c714ab2?w=1920&auto=format&fit=crop') center/cover;
+    background: linear-gradient(rgba(248, 249, 250, 0.99), rgba(248, 249, 250, 0.99)),
+                linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     position: relative;
 }
 
@@ -716,11 +718,11 @@
     letter-spacing: 1px;
 }
 
-/* How It Works - Texas Theme */
+/* How It Works - Texas Theme - Optimized */
 .how-it-works {
     padding: 50px 20px;
-    background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)),
-                url('https://images.unsplash.com/photo-1568736355892-e7c3c3be5260?w=1920&auto=format&fit=crop') bottom/cover;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.98)),
+                linear-gradient(to top, #e9ecef 0%, #ffffff 50%);
 }
 
 .steps-timeline {

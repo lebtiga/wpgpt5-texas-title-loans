@@ -4,6 +4,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Include performance optimizations
+require_once get_template_directory() . '/includes/performance-optimization.php';
+
 function wpgpt_enqueue_assets(): void {
     $theme_version = wp_get_theme()->get('Version') ?: '0.1.0';
 
