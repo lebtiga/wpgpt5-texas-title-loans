@@ -105,8 +105,8 @@ get_header();
                 <a href="#apply" class="button button--primary">Apply Now</a>
             </div>
         </div>
-        <div class="eligibility__image">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&h=420&fit=crop" alt="Car title loan approval process" />
+        <div class="eligibility__image" style="background: linear-gradient(135deg, #0d4c85 0%, #002868 50%, #0b2f53 100%); min-height: 300px; border-radius: 10px;">
+            <!-- Image removed for performance - using CSS gradient instead -->
         </div>
     </div>
 </section>

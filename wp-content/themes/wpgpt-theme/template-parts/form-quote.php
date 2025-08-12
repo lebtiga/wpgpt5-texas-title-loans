@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) { exit; }
 ?>
 <div class="formcard">
     <h2 class="formcard__title">Start Your Free Quote</h2>
-    <img class="formcard__image" src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1200&auto=format&fit=crop" alt="Fast cash with Texas car title loans" />
+    <!-- Image removed for performance - using CSS styling instead -->
     <form class="form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" id="title-loan-form">
         <?php wp_nonce_field('title_loan_quote', 'quote_nonce'); ?>
         <input type="hidden" name="action" value="submit_title_loan_quote">

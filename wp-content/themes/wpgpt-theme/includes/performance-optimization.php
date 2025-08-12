@@ -99,13 +99,8 @@ add_action('wp_head', function() {
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <?php
-    // Preload hero background image for LCP with optimized size
-    if (is_front_page()) {
-        echo '<link rel="preload" as="image" href="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1200&q=80&auto=format&fit=crop" fetchpriority="high">';
-    }
+    // No external images to preload - using CSS gradients for better performance
 }, 2);
 
 /**
