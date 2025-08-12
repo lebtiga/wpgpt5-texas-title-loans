@@ -48,7 +48,7 @@
         }, { passive: false });
     });
     
-    // Exit Intent Popup
+    // Exit Intent Popup - using pagehide instead of unload (deprecated)
     let exitIntentShown = false;
     document.addEventListener('mouseleave', function(e) {
         if (e.clientY <= 0 && !exitIntentShown) {

@@ -53,7 +53,7 @@
                     class="form-iframe-responsive" 
                     src="https://ezcar.blckpanda.com/appl/app_form.php" 
                     style="width: 100%; height: 100%; border: none;" 
-                    sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-modals allow-top-navigation-by-user-activation"
+                    sandbox="allow-scripts allow-forms allow-popups allow-modals"
                     title="Texas Title Loan Application Form"
                     loading="eager">
                   </iframe>

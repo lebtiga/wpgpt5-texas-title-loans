@@ -33,12 +33,15 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
 }, 10, 3);
 
 /**
- * 3. Add browser caching headers
+ * 3. Add browser caching headers and security headers
  */
 add_action('send_headers', function() {
     if (!is_admin()) {
         header('Cache-Control: public, max-age=31536000');
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
+        
+        // Add CSP headers to allow iframe content
+        header("Content-Security-Policy: frame-src https://ezcar.blckpanda.com https://ajax.googleapis.com; script-src 'self' 'unsafe-inline' https://ajax.googleapis.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;");
     }
 });
 
@@ -105,8 +108,10 @@ add_action('wp_head', function() {
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://ezcar.blckpanda.com">
+    <link rel="dns-prefetch" href="https://ezcar.blckpanda.com">
     <?php
-    // No external images to preload - using CSS gradients for better performance
+    // Preconnect to iframe domain for faster loading
 }, 2);
 
 /**
