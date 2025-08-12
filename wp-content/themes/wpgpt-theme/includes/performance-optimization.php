@@ -45,18 +45,19 @@ add_action('send_headers', function() {
 /**
  * 4. Remove render-blocking CSS and optimize loading
  */
-add_action('wp_enqueue_scripts', function() {
-    // Get all registered styles
-    global $wp_styles;
+add_action('wp_print_styles', function() {
+    // Get the sales page CSS URL
+    $sales_css_url = get_template_directory_uri() . '/assets/css/sales-page-fixed.css';
     
-    // Defer non-critical CSS
-    foreach ($wp_styles->queue as $handle) {
-        if (!in_array($handle, ['wpgpt-main'])) { // Keep main CSS in head
-            $wp_styles->add_data($handle, 'media', 'print');
-            $wp_styles->add_data($handle, 'onload', "this.media='all'");
-        }
+    // Remove the sales-page style from normal enqueue
+    wp_dequeue_style('sales-page');
+    
+    // Add it as preload with proper loading
+    if (is_front_page()) {
+        echo '<link rel="preload" href="' . esc_url($sales_css_url) . '?ver=1.0.4" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+        echo '<noscript><link rel="stylesheet" href="' . esc_url($sales_css_url) . '?ver=1.0.4"></noscript>';
     }
-}, 100);
+}, 999);
 
 /**
  * 5. Inline critical CSS for above-the-fold content
@@ -74,6 +75,10 @@ add_action('wp_head', function() {
             .form-card{background:#fff;border-radius:15px;padding:30px;box-shadow:0 15px 50px rgba(0,0,0,.2)}
             .btn-primary{padding:16px 30px;border:none;border-radius:10px;font-size:16px;font-weight:700;background:linear-gradient(135deg,#bf0a30,#002868);color:#fff}
         </style>
+        <script>
+        // Polyfill for rel=preload CSS
+        !function(e){"use strict";e.loadCSS||(e.loadCSS=function(){});var t=loadCSS.relpreload={};if(t.support=function(){var t;try{t=e.document.createElement("link").relList.supports("preload")}catch(e){t=!1}return function(){return t}}(),t.bindMediaToggle=function(e){function t(){e.media=a}var a=e.media||"all";e.addEventListener?e.addEventListener("load",t):e.attachEvent&&e.attachEvent("onload",t),setTimeout(function(){e.rel="stylesheet",e.media="only x"}),setTimeout(t,3e3)},!t.support()){var a=e.document.getElementsByTagName("link");for(var n in a)if("preload"===a[n].rel&&"style"===a[n].getAttribute("as")&&!a[n].getAttribute("data-loadcss")){a[n].setAttribute("data-loadcss",!0),t.bindMediaToggle(a[n])}}}(window);
+        </script>
         <?php
     }
 }, 5);
@@ -88,13 +93,19 @@ add_action('wp_head', function() {
 }, 1);
 
 /**
- * 7. Preload critical resources
+ * 7. Preload critical resources and optimize LCP
  */
 add_action('wp_head', function() {
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <?php
+    // Preload hero background image for LCP with optimized size
+    if (is_front_page()) {
+        echo '<link rel="preload" as="image" href="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=1200&q=80&auto=format&fit=crop" fetchpriority="high">';
+    }
 }, 2);
 
 /**

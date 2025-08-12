@@ -20,6 +20,10 @@
         <a class="site-brand" href="<?php echo esc_url(home_url('/')); ?>">
             <img src="https://www.ezcartitleloans.com/images/image/eztitleloans-logoAT2x.webp" 
                  alt="EZ Car Title Loans - Texas Title Loans" 
+                 width="180" 
+                 height="40"
+                 loading="eager"
+                 fetchpriority="high"
                  style="height: 40px; width: auto; max-width: 180px;" />
         </a>
         <nav class="site-nav" aria-label="Primary">
