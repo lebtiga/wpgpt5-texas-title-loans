@@ -7,22 +7,43 @@ if (!defined('ABSPATH')) {
 function wpgpt_enqueue_assets(): void {
     $theme_version = wp_get_theme()->get('Version') ?: '0.1.0';
 
-    // Main stylesheet
+    // Main stylesheet - in root assets folder
     wp_enqueue_style(
         'wpgpt-main',
-        get_template_directory_uri() . '/assets/css/main.css',
+        get_template_directory_uri() . '/../../assets/css/main.css',
         [],
         $theme_version
     );
+    
+    // Sales page CSS for homepage
+    if (is_front_page()) {
+        wp_enqueue_style(
+            'sales-page',
+            get_template_directory_uri() . '/../../assets/css/sales-page.css',
+            ['wpgpt-main'],
+            '1.0.0'
+        );
+    }
 
-    // Main script
+    // Main script - in root assets folder
     wp_enqueue_script(
         'wpgpt-main',
-        get_template_directory_uri() . '/assets/js/main.js',
+        get_template_directory_uri() . '/../../assets/js/main.js',
         [],
         $theme_version,
         true
     );
+    
+    // Sales page JavaScript for homepage
+    if (is_front_page()) {
+        wp_enqueue_script(
+            'sales-page',
+            get_template_directory_uri() . '/../../assets/js/sales-page.js',
+            ['wpgpt-main'],
+            '1.0.0',
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'wpgpt_enqueue_assets');
 
