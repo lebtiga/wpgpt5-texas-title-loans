@@ -7,28 +7,28 @@ if (!defined('ABSPATH')) {
 function wpgpt_enqueue_assets(): void {
     $theme_version = wp_get_theme()->get('Version') ?: '0.1.0';
 
-    // Main stylesheet - in root assets folder
+    // Main stylesheet - now in theme assets folder
     wp_enqueue_style(
         'wpgpt-main',
-        get_template_directory_uri() . '/../../assets/css/main.css',
+        get_template_directory_uri() . '/assets/css/main.css',
         [],
         $theme_version
     );
     
-    // Sales page CSS for homepage
+    // Sales page CSS for homepage - fixed version
     if (is_front_page()) {
         wp_enqueue_style(
             'sales-page',
-            get_template_directory_uri() . '/../../assets/css/sales-page.css',
+            get_template_directory_uri() . '/assets/css/sales-page-fixed.css',
             ['wpgpt-main'],
-            '1.0.0'
+            '1.0.3'
         );
     }
 
-    // Main script - in root assets folder
+    // Main script - now in theme assets folder
     wp_enqueue_script(
         'wpgpt-main',
-        get_template_directory_uri() . '/../../assets/js/main.js',
+        get_template_directory_uri() . '/assets/js/main.js',
         [],
         $theme_version,
         true
@@ -38,9 +38,9 @@ function wpgpt_enqueue_assets(): void {
     if (is_front_page()) {
         wp_enqueue_script(
             'sales-page',
-            get_template_directory_uri() . '/../../assets/js/sales-page.js',
-            ['wpgpt-main'],
-            '1.0.0',
+            get_template_directory_uri() . '/assets/js/sales-page.js',
+            [],
+            '1.0.1',
             true
         );
     }
