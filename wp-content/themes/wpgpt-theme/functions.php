@@ -46,7 +46,7 @@ function wpgpt_enqueue_assets(): void {
             'sales-page',
             get_template_directory_uri() . '/assets/js/sales-page.js',
             [],
-            '1.1.0',
+            '1.2.0',
             true
         );
     }

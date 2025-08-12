@@ -66,13 +66,19 @@ add_action('wp_head', function() {
     if (is_front_page()) {
         ?>
         <style id="critical-css">
-            /* Critical above-the-fold CSS */
+            /* Critical above-the-fold CSS - Enhanced for LCP */
             body{margin:0;font-family:system-ui,-apple-system,sans-serif}
-            .urgency-banner{background:linear-gradient(90deg,#bf0a30,#002868);color:#fff;padding:10px;text-align:center;font-size:14px;font-weight:600;position:sticky;top:0;z-index:100}
-            .hero-sales{background:linear-gradient(rgba(13,76,133,.88),rgba(11,47,83,.92)),#0d4c85;color:#fff;padding:40px 20px;text-align:center}
+            .urgency-banner{background:linear-gradient(90deg,#bf0a30,#002868);color:#fff;padding:10px;text-align:center;font-size:14px;font-weight:600;position:sticky;top:0;z-index:100;display:flex;justify-content:center;align-items:center;gap:20px;border-bottom:2px solid #ffd700}
+            .hero-sales{background:linear-gradient(rgba(13,76,133,.88),rgba(11,47,83,.92)),linear-gradient(135deg,#0d4c85 0%,#0b2f53 100%);color:#fff;padding:40px 20px;text-align:center;position:relative;background-size:cover;background-position:center}
+            .hero-sales__content{max-width:1200px;margin:0 auto}
             .hero-sales__headline{font-size:32px;line-height:1.2;margin-bottom:20px;font-weight:800}
-            .hero-sales__headline .highlight{color:#ffeb3b;font-size:38px;display:block}
-            .form-card{background:#fff;border-radius:15px;padding:30px;box-shadow:0 15px 50px rgba(0,0,0,.2)}
+            .hero-sales__headline .highlight{color:#ffeb3b;font-size:38px;display:block;text-shadow:2px 2px 4px rgba(0,0,0,.3);margin:10px 0}
+            .hero-sales__benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-bottom:30px}
+            .hero-sales__benefits span{background:rgba(255,255,255,.2);padding:8px 16px;border-radius:20px;font-size:14px}
+            .iphone-container-responsive{position:relative!important;width:340px!important;height:636px!important;transition:all .3s ease!important;max-width:100%}
+            .mobile-center-wrapper{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;padding:20px!important;box-sizing:border-box!important}
+            .iframe-container-responsive{position:absolute!important;top:56px!important;left:19px!important;width:309px!important;height:524px!important;overflow:hidden!important;border-radius:22px!important;transition:all .3s ease!important}
+            .form-iframe-responsive{width:100%!important;height:100%!important;border:none!important}
             .btn-primary{padding:16px 30px;border:none;border-radius:10px;font-size:16px;font-weight:700;background:linear-gradient(135deg,#bf0a30,#002868);color:#fff}
         </style>
         <script>

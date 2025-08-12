@@ -41,7 +41,13 @@
               box-sizing: border-box;
             ">
               <div class="iphone-container-responsive" style="position: relative; width: 340px; height: 636px; transition: all 0.3s ease;">
-                <img src="https://www.ezcartitleloans.com/images/image/iphone-mo.webp" alt="iPhone" style="width: 100%; height: 100%;">
+                <img src="https://www.ezcartitleloans.com/images/image/iphone-mo.webp" 
+                     alt="iPhone" 
+                     width="340" 
+                     height="636"
+                     fetchpriority="high"
+                     loading="eager"
+                     style="width: 100%; height: 100%;">
                 <div class="iframe-container-responsive" style="position: absolute; top: 56px; left: 19px; width: 309px; height: 524px; overflow: hidden; border-radius: 22px; transition: all 0.3s ease;">
                   <iframe 
                     class="form-iframe-responsive" 
